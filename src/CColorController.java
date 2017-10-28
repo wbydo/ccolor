@@ -1,20 +1,30 @@
+import java.awt.event.MouseListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Color;
 
 
-class CColorController extends MouseAdapter{
-    CColorView view;
+class CColorController{
     CColorModel model;
-    Color color;
 
-    CColorController(CColorModel m, Color c){
+    CColorController(CColorModel m){
         this.model = m;
-        this.color = c;
-
     }
 
-    public void mousePressed(MouseEvent e){
-        model.changeColor(this.color);
+    MouseListener getOrangeController(){
+        return this.buildMouseListener(Color.orange);
+    }
+
+    MouseListener getBlueController(){
+        return this.buildMouseListener(Color.blue);
+    }
+
+    private MouseListener buildMouseListener(Color c){
+        return new MouseAdapter(){
+            @Override
+            public void mousePressed(MouseEvent e){
+                model.changeColor(c);
+            }
+        };
     }
 }

@@ -4,19 +4,14 @@ class CColor{
     public static void main(String[] args){
         CColorView view;
         CColorModel model;
-        CColorController c;
+        CColorController ctr;
 
         model = new CColorModel();
         view = new CColorView(model);
         model.addObserver(view);
 
-
-
-        CColorController ctrO = new CColorController(model, Color.orange);
-
-        CColorController ctrB = new CColorController(model, Color.blue);
-
-        view.addController(ctrO,ctrB);
+        ctr = new CColorController(model);
+        view.addController(ctr);
 
         view.visible();
     }

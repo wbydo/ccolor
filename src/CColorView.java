@@ -3,6 +3,7 @@ import java.awt.Dimension;
 import java.awt.Color;
 import java.awt.FlowLayout;
 
+import java.awt.event.MouseListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -74,13 +75,12 @@ class CColorView implements Observer{
         this.changeColor(c);
     }
 
-    void addController(CColorController ctrOrange, CColorController ctrBlue){
+    void addController(CColorController ctr){
+        MouseListener OrangeCtr = ctr.getOrangeController();
+        MouseListener BlueCtr = ctr.getBlueController();
 
-
-        button_orange.addMouseListener(ctrOrange);
-
-        button_blue.addMouseListener(ctrBlue);
-
+        button_orange.addMouseListener(OrangeCtr);
+        button_blue.addMouseListener(BlueCtr);
     }
 
 }
