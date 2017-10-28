@@ -7,7 +7,7 @@ class CColor{
         CColorController c;
 
         model = new CColorModel();
-        view = new CColorView();
+        view = new CColorView(model);
         model.addObserver(view);
 
 

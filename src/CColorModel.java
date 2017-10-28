@@ -6,7 +6,7 @@ class CColorModel extends Observable{
     Color presense;
 
     CColorModel(){
-        this.presense = Color.black;
+        this.presense = Color.blue;
     }
 
     void changeColor(Color c){

@@ -21,7 +21,7 @@ class CColorView implements Observer{
     JButton button_orange;
     JButton button_blue;
 
-    CColorView(){
+    CColorView(CColorModel model){
         frame = new JFrame("てすと");
         frame.setSize(400, 600);
         frame.setLocationRelativeTo(null);
@@ -34,8 +34,7 @@ class CColorView implements Observer{
         colorPanel.setPreferredSize(new Dimension(400, 400));
         colorPanel.setMaximumSize(new Dimension(400, 400));
 
-        // 初期色の設定。あんまり意味ない
-        colorPanel.setBackground(Color.pink);
+        colorPanel.setBackground(model.getColor());
         container.add(colorPanel);
 
         buttonPanel = new JPanel();
