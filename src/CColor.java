@@ -2,21 +2,22 @@ import java.awt.Color;
 
 class CColor{
   public static void main(String[] args){
-    CColorView v;
-    CColorModel m;
+    CColorView view;
+    CColorModel model;
     CColorController c;
 
-    v = new CColorView();
-    m = new CColorModel(v);
+    model = new CColorModel();
+    view = new CColorView();
+    model.addObserver(view);
 
 
 
-    CColorController ctrO = new CColorController(m, Color.orange);
+    CColorController ctrO = new CColorController(model, Color.orange);
 
-    CColorController ctrB = new CColorController(m, Color.blue);
+    CColorController ctrB = new CColorController(model, Color.blue);
 
-    v.addController(ctrO,ctrB);
+    view.addController(ctrO,ctrB);
 
-    v.visible();
+    view.visible();
   }
 }
