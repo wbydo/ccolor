@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<project
+    name="ccolor"
+    default="run"
+    basedir='.'>
+
+    <target
+        name="run"
+        depends="compile">
+
+        <java
+            classname='CColor'
+            classpath="class"
+            fork="yes"/>
+    </target>
+
+    <target
+        name="compile"
+        >
+        <mkdir dir='class' />
+        <javac
+            srcdir="src"
+            destdir="class"
+            includeantruntime="false" />
+
+    </target>
+</project>
