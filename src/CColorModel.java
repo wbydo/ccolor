@@ -6,19 +6,19 @@ class CColorModel extends Observable{
     Color presense;
 
     CColorModel(){
-	this.presense = Color.black;
+        this.presense = Color.black;
     }
 
     void changeColor(Color c){
 
-	this.presense = c;
-	this.setChanged();
-	this.notifyObservers();
-	System.out.println(c.toString());
+        this.presense = c;
+        this.setChanged();
+        this.notifyObservers();
+        System.out.println(c.toString());
 
 
     }
     Color getColor(){
-	return this.presense;
+        return this.presense;
     }
 }

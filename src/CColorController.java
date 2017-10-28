@@ -6,10 +6,10 @@ class CColorController implements MouseListener{
     CColorView view;
     CColorModel model;
     Color color;
-    
+
     CColorController(CColorModel m, Color c){
         this.model = m;
-	this.color = c;
+        this.color = c;
 
     }
 
@@ -23,12 +23,12 @@ class CColorController implements MouseListener{
 
     }
     public void mousePressed(MouseEvent e){
-	model.changeColor(this.color);
-	
+        model.changeColor(this.color);
+
 
     }
     public void mouseReleased(MouseEvent e){
 
     }
-    
+
 }
