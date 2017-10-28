@@ -1,8 +1,9 @@
-import java.awt.event.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.Color;
 
 
-class CColorController implements MouseListener{
+class CColorController extends MouseAdapter{
     CColorView view;
     CColorModel model;
     Color color;
@@ -13,22 +14,7 @@ class CColorController implements MouseListener{
 
     }
 
-    public void mouseClicked(MouseEvent e){
-
-    }
-    public void mouseEntered(MouseEvent e){
-
-    }
-    public void mouseExited(MouseEvent e){
-
-    }
     public void mousePressed(MouseEvent e){
         model.changeColor(this.color);
-
-
     }
-    public void mouseReleased(MouseEvent e){
-
-    }
-
 }
